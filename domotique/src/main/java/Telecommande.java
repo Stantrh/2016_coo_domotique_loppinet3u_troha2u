@@ -7,6 +7,10 @@ public class Telecommande {
     public Telecommande() {
         this.lampes = new ArrayList<Lampe>();
     }
+
+    public Telecommande(int longueur) {
+        this.lampes = new ArrayList<Lampe>(longueur);
+    }
     public void ajouterLampe(Lampe l){
         throw new Error("Méthode non écrite");
     }

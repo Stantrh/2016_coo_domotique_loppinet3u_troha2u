@@ -47,6 +47,7 @@ public class TelecommandeTest {
         assertEquals(lampe.isActif(), true);
     }
 
+
     /*
     * activation d'une lampe existante en position 1 ;
     */
@@ -67,5 +68,13 @@ public class TelecommandeTest {
     /*
     * activation d'une lampe inexistante.
     */
-
+    @Test public void activerLampeInexistante(){
+        // préparation des données
+        Lampe lampe = new Lampe("Lampe 1");
+        Telecommande telec = new Telecommande(2);
+        // méthode testée
+        telec.activerLampe(1);
+        // vérification
+        assertEquals(null, telec.getLampe(1));
+    }
 }
