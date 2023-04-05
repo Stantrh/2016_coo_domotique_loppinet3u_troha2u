@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class Telecommande {
 
-    private Lampe[] lampes;
+    private ArrayList<Lampe> lampes;
 
-    public Telecommande(Lampe[] lampes) { throw new Error("Méthode non écrite");}
-
+    public Telecommande() {
+        this.lampes = new ArrayList<Lampe>();
+    }
     public void ajouterLampe(Lampe l){
         throw new Error("Méthode non écrite");
     }
@@ -24,4 +27,7 @@ public class Telecommande {
         throw new Error("Méthode non écrite");
     }
 
+    public Lampe getLampe(int x){
+        return this.lampes.get(x);
+    }
 }
