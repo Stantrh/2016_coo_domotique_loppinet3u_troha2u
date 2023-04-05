@@ -19,7 +19,8 @@ public class TelecommandeTest {
     /*
     * ajout d'une lampe à une télécommande avec 1 élément ;
     */
-    @Test public void testAjoutLampe1Element(){
+    @Test
+    public void testAjoutLampe1Element(){
         // préparation des données
         Lampe lampe = new Lampe("Lampe 1");
         Lampe lampe2 = new Lampe("Lampe 2");
@@ -34,22 +35,37 @@ public class TelecommandeTest {
     /*
     * activation d'une lampe existante en position 0 ;
     */
-    @Test public void activerLampeExistante(){
+    @Test
+    public void activerLampeExistante0(){
         // préparation des données
         Lampe lampe = new Lampe("Lampe 1");
-        Lampe lampe2 = new Lampe("Lampe 2");
         Telecommande telec = new Telecommande();
+        telec.ajouterLampe(lampe);
         // méthode testée
-
+        telec.activerLampe(0);
         // vérification
-
+        assertEquals(lampe.isActif(), true);
     }
 
     /*
     * activation d'une lampe existante en position 1 ;
     */
+    @Test
+    public void activerLampeExistante1(){
+        // préparation des données
+        Lampe lampe = new Lampe("Lampe 1");
+        Lampe lampe2 = new Lampe("Lampe 2");
+        Telecommande telec = new Telecommande();
+        telec.ajouterLampe(lampe);
+        telec.ajouterLampe(lampe2);
+        // méthode testée
+        telec.activerLampe(1);
+        // vérification
+        assertEquals(true, telec.getLampe(1).isAllume());
+    }
 
     /*
     * activation d'une lampe inexistante.
     */
+
 }
