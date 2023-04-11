@@ -25,7 +25,7 @@ public class TelecommandeTest {
         Lampe lampe = new Lampe("Lampe 1");
         Lampe lampe2 = new Lampe("Lampe 2");
         Telecommande telec = new Telecommande();
-        telec.add(lampe);
+        telec.ajouterLampe(lampe);
         // méthode testée
         telec.ajouterLampe(lampe2);
         // vérification
@@ -44,7 +44,7 @@ public class TelecommandeTest {
         // méthode testée
         telec.activerLampe(0);
         // vérification
-        assertEquals(lampe.isActif(), true);
+        assertEquals(lampe.isAllume(), true);
     }
 
 
@@ -75,6 +75,6 @@ public class TelecommandeTest {
         // méthode testée
         telec.activerLampe(1);
         // vérification
-        assertEquals(null, telec.getLampe(1));
+        assertEquals(0, telec.nbLampes());
     }
 }
