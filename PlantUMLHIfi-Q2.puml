@@ -1,0 +1,40 @@
+@startuml
+title Question 2
+'''classes
+class Telecommande{
+    +Telecommande():
+    +Telecommande(int longueurLampe, int longueurHifi):
+    +ajouterLampe(Lampe l):
+    +activerLampe(int x):
+    +desactiverLampe(int x):
+    +activerTout():
+    +activerHifi(int x):
+    +desactiverHifi(int x):
+    +toString():String
+    +getLampe(int x):Lampe
+    +nbLampes():int
+    +getHifi(int x):Lampe
+    +nbHifis():int
+}
+
+class Lampe{
+    -nom:String
+    -allume:boolean
+    +Lampe(String paramNom):
+    +allumer():
+    +eteindre():
+    +toString():String
+    +isAllume():boolean
+}
+
+class Hifi{
+    -son:int
+    +allumer():
+    +eteindre():
+    +toString():String
+}
+
+'''relations
+Telecommande "1" -> "0..*" Lampe : -lampes
+Telecommande "1" -> "0..*" Hifi : -hifis
+@enduml
