@@ -34,7 +34,18 @@ class Hifi{
     +toString():String
 }
 
+class Television{
+    -nom:String
+    -allume:boolean
+    +Lampe(String paramNom):
+    +allumer():
+    +eteindre():
+    +toString():String
+    +isAllume():boolean
+}
+
 '''relations
 Telecommande "1" -> "0..*" Lampe : -lampes
 Telecommande "1" -> "0..*" Hifi : -hifis
+Telecommande "1" -> "0..*" Television : -televisions
 @enduml
