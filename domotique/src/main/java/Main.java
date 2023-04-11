@@ -26,19 +26,19 @@ public class Main {
 
 	/**
 	 * menu qui permet de manipuler une telecommande
-	 * 
+	 *
 	 * @param t
 	 *            telecommande a manipuler
 	 */
 	private static void lancerMenu(Telecommande t) {
 		System.out.println(t);
 		Scanner sc = new Scanner(System.in);
-		
+
 		boolean fini=false;
-		
+
 		// tant qu'il y a des commandes
 		while (!fini) {
-			
+
 			// demande lampe et commande
 			System.out.println("entrer le numero de la lampe");
 			int choix = sc.nextInt();
@@ -65,7 +65,7 @@ public class Main {
 			else {
 				System.out.println("commande inconnue");
 			}
-			
+
 			//affiche l'etat de le telecommande
 			System.out.println(t);
 		}
@@ -74,7 +74,7 @@ public class Main {
 
 	/**
 	 * creation des objets et ajout dans la telecommande
-	 * 
+	 *
 	 * @param t
 	 *            telecommande dans lequelle on ajoute 4 lampes
 	 */
