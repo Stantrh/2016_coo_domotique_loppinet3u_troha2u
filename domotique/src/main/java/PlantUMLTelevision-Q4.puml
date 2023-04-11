@@ -10,11 +10,15 @@ class Telecommande{
     +activerTout():
     +activerHifi(int x):
     +desactiverHifi(int x):
+    +activerTelevision(int x):
+    +desactiverTelevision(int x):
     +toString():String
     +getLampe(int x):Lampe
     +nbLampes():int
     +getHifi(int x):Lampe
     +nbHifis():int
+    +getTelevision(int x):Lampe
+    +nbTelevisions():int
 }
 
 class Lampe{
