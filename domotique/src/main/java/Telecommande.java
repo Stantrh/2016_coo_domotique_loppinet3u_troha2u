@@ -23,36 +23,31 @@ public class Telecommande {
     }
 
     public void desactiverLampe(int x){
-        if(x>=0 && x<this.lampes.size())
-            this.lampes.get(x).eteindre();
+        if(x>=0 && x<this.appareils.size())
+            this.appareils.get(x).eteindre();
     }
 
     public void activerTout(){
-        for(int i=0;i<this.lampes.size();i++){
-            this.lampes.get(i).allumer();
+        for(int i=0;i<this.appareils.size();i++){
+            this.appareils.get(i).allumer();
         }
     }
 
 
     public String toString(){
         String res = "";
-        for(int i=0;i<this.lampes.size();i++){
-            res += this.lampes.get(i).toString();
-            res += "\n";
-        }
-        res += "\n\n\n";
-        for(int i=0;i<this.hifis.size();i++){
-            res += this.hifis.get(i).toString();
+        for(int i=0;i<this.appareils.size();i++){
+            res += this.appareils.get(i).toString();
             res += "\n";
         }
         return res;
     }
 
-    public Lampe getLampe(int x){
+    public Appareil getLampe(int x){
         return this.appareils.get(x);
     }
 
-    public int nbLampes(){
+    public int nbAppareils(){
         return this.appareils.size();
     }
 

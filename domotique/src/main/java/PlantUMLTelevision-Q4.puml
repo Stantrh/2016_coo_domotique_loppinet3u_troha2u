@@ -1,5 +1,5 @@
 @startuml
-title Question 2
+title Question 4
 '''classes
 class Telecommande{
     +Telecommande():
