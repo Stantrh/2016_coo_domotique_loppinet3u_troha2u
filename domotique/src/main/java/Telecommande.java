@@ -22,7 +22,7 @@ public class Telecommande {
             this.appareils.get(x).allumer();
     }
 
-    public void desactiverLampe(int x){
+    public void desactiverAppareil(int x){
         if(x>=0 && x<this.appareils.size())
             this.appareils.get(x).eteindre();
     }

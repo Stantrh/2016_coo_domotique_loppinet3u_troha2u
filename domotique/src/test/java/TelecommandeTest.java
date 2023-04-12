@@ -75,6 +75,22 @@ public class TelecommandeTest {
         // méthode testée
         telec.activerAppareil(1);
         // vérification
-        assertEquals(0, telec.nbAppareils());
+        assertEquals(0, telec.getNombre());
+    }
+
+    /**
+     * activation d'une cheminee existante
+     */
+    @Test
+    public void activerChemineeExistante0(){
+        // préparation des données
+        Cheminee cheminee = new Cheminee();
+        AdapterCheminee adapterCheminee = new AdapterCheminee(cheminee);
+        Telecommande telec = new Telecommande();
+        telec.ajouterAppareil(adapterCheminee);
+        // méthode testée
+        telec.activerAppareil(0);
+        // vérification
+        assertEquals(10, ((AdapterCheminee)telec.getAppareil(0)).getCheminee().getLumiere());
     }
 }

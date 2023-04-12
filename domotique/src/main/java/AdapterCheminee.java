@@ -19,4 +19,8 @@ public class AdapterCheminee implements Appareil{
     public String toString(){
         return this.cheminee.toString();
     }
+
+    public Cheminee getCheminee() {
+        return this.cheminee;
+    }
 }
