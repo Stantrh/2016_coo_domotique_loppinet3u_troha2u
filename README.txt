@@ -9,4 +9,8 @@ Troha Stanislas
 
 -- Lien Notion du rendu : https://www.notion.so/CO-TD7-LOPPINET-St-phane-E-2d6b38f760b14853b5a0a4ed72143040?pvs=4
 
+OU ALORS 
+
+J'ai exporté mon fichier sous la forme d'un HTML dans le dossier compte-rendu
+
 
