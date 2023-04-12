@@ -11,15 +11,9 @@ class Telecommande{
     + toString(): String
 }
 
-interface Appareil{
-    + allumer():
-    + eteindre():
-}
-
 class Lampe{
     - nom : String
     - allume : boolean
-
     + Lampe(String):
     + allumer():
     + eteindre():
@@ -28,14 +22,33 @@ class Lampe{
 
 class Hifi{
     - son : int
-
     + allumer():
     + eteindre():
     + toString():String
 }
 
+class Cheminee{
+    -intensite : int
+    +Cheminee():
+    +changerIntensite(int i):
+    +getLumiere():int
+    +toString():String
+}
+
+class AdapterCheminee{
+    +AdapterCheminee(Cheminee):
+    +eteindre():
+    +allumer():
+    +toString():String
+}
+'''Adapter : c'est un patron de conception qui permet à des objets incompatibles de collaborer.
+'''La classe Adapter emballe les appels à un objet et les mets dans un format reconnaissable par le second objet.
+
+
 '''relations
 Appareil <|.. Lampe
 Appareil <|.. Hifi
+Appareil <|.. AdapterCheminee
 Telecommande "1" -> "0..*" Appareil : - appareils
-@enduml
+AdapterCheminee "1" -> "1" Cheminee : cheminee
+@endu   ml

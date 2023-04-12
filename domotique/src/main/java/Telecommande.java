@@ -47,7 +47,7 @@ public class Telecommande {
         return this.appareils.get(x);
     }
 
-    public int nbAppareils(){
+    public int getNombre(){
         return this.appareils.size();
     }
 
