@@ -43,7 +43,7 @@ public class Telecommande {
         return res;
     }
 
-    public Appareil getLampe(int x){
+    public Appareil getAppareil(int x){
         return this.appareils.get(x);
     }
 

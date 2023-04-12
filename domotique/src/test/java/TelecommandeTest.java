@@ -11,9 +11,9 @@ public class TelecommandeTest {
         Lampe lampe = new Lampe("Lampe 1");
         Telecommande telec = new Telecommande();
         // méthode testée
-        telec.ajouterLampe(lampe);
+        telec.ajouterAppareil(lampe);
         // vérification
-        assertEquals(lampe, telec.getLampe(0));
+        assertEquals(lampe, telec.getAppareil(0));
     }
 
     /*
@@ -25,11 +25,11 @@ public class TelecommandeTest {
         Lampe lampe = new Lampe("Lampe 1");
         Lampe lampe2 = new Lampe("Lampe 2");
         Telecommande telec = new Telecommande();
-        telec.ajouterLampe(lampe);
+        telec.ajouterAppareil(lampe);
         // méthode testée
-        telec.ajouterLampe(lampe2);
+        telec.ajouterAppareil(lampe2);
         // vérification
-        assertEquals(lampe2, telec.getLampe(1));
+        assertEquals(lampe2, telec.getAppareil(1));
     }
 
     /*
@@ -40,11 +40,11 @@ public class TelecommandeTest {
         // préparation des données
         Lampe lampe = new Lampe("Lampe 1");
         Telecommande telec = new Telecommande();
-        telec.ajouterLampe(lampe);
+        telec.ajouterAppareil(lampe);
         // méthode testée
-        telec.activerLampe(0);
+        telec.activerAppareil(0);
         // vérification
-        assertEquals(lampe.isAllume(), true);
+        assertEquals(true, ((Lampe)telec.getAppareil(0)).isAllume());
     }
 
 
@@ -57,12 +57,12 @@ public class TelecommandeTest {
         Lampe lampe = new Lampe("Lampe 1");
         Lampe lampe2 = new Lampe("Lampe 2");
         Telecommande telec = new Telecommande();
-        telec.ajouterLampe(lampe);
-        telec.ajouterLampe(lampe2);
+        telec.ajouterAppareil(lampe);
+        telec.ajouterAppareil(lampe2);
         // méthode testée
-        telec.activerLampe(1);
+        telec.activerAppareil(1);
         // vérification
-        assertEquals(true, telec.getLampe(1).isAllume());
+        assertEquals(true, ((Lampe)telec.getAppareil(1)).isAllume());
     }
 
     /*
@@ -71,10 +71,10 @@ public class TelecommandeTest {
     @Test public void activerLampeInexistante(){
         // préparation des données
         Lampe lampe = new Lampe("Lampe 1");
-        Telecommande telec = new Telecommande(2,0);
+        Telecommande telec = new Telecommande(2);
         // méthode testée
-        telec.activerLampe(1);
+        telec.activerAppareil(1);
         // vérification
-        assertEquals(0, telec.nbLampes());
+        assertEquals(0, telec.nbAppareils());
     }
 }
