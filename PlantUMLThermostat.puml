@@ -41,19 +41,36 @@ class AdapterCheminee{
     +allumer():
     +toString():String
 }
-
-interface Appareil{
-    +allumer():
-    +eteindre():
-}
 '''Adapter : c'est un patron de conception qui permet à des objets incompatibles de collaborer.
 '''La classe Adapter emballe les appels à un objet et les mets dans un format reconnaissable par le second objet.
 
+class AdapterThermostat{
+    +AdapterThermostat(Thermostat):
+    +eteindre():
+    +allumer():
+    +toString():
+}
+
+class Thermostat{
+    -temperature:int
+    +Thermostat():
+    +point(Graphics g):
+    +monterTemperature():
+    +baisserTemperature():
+}
+
+class Appareil{
+    +eteindre():
+    +allumer():
+
+}
 
 '''relations
 Appareil <|.. Lampe
 Appareil <|.. Hifi
 Appareil <|.. AdapterCheminee
+Appareil <|.. AdapterThermostat
 Telecommande "1" -> "0..*" Appareil : - appareils
 AdapterCheminee "1" -> "1" Cheminee : cheminee
-@endu   ml
+AdapterThermostat "1" -> "1" Thermostat : thermostat
+@enduml
