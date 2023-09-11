@@ -22,6 +22,7 @@ class Lampe{
 
 class Hifi{
     - son : int
+    + Hifi(String):
     + allumer():
     + eteindre():
     + toString():String
@@ -29,7 +30,7 @@ class Hifi{
 
 class Cheminee{
     -intensite : int
-    +Cheminee():
+    +Cheminee(String):
     +changerIntensite(int i):
     +getLumiere():int
     +toString():String
@@ -56,4 +57,4 @@ Appareil <|.. Hifi
 Appareil <|.. AdapterCheminee
 Telecommande "1" -> "0..*" Appareil : - appareils
 AdapterCheminee "1" -> "1" Cheminee : cheminee
-@endu   ml
+@enduml
